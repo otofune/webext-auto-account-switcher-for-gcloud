@@ -4,8 +4,7 @@ import {
   listAccounts,
 } from "./lib/dashboard";
 
-const KEY_ALREADY_REDIRECTED = "wgaaw_already";
-const KEY_AUTHUSER = "authuser";
+const KEY_ALREADY_REDIRECTED = "__wgaaw_already";
 const KEY_PROJECTID = "project";
 
 const findAccount = async (projectID: string): Promise<Account | undefined> => {
@@ -23,11 +22,12 @@ const main = async (currentURL: string = location.href) => {
   const url = new URL(currentURL);
 
   // recovery from navigation-error
-  // expected format: /navigation-error;errorUrl={parcent encoded path}/{errorpage}
+  // expected format: /navigation-error;errorUrl={parcent encoded path+query}/{errorpage}
   if (url.pathname.startsWith("/navigation-error;")) {
     const errorUrlSplit = url.pathname.split(";")[1].split("errorUrl=");
     if (errorUrlSplit.length === 2 && errorUrlSplit[0] === "") {
       const errorPath = decodeURIComponent(errorUrlSplit[1].split("/")[0]);
+      // split path and search for replace
       const errorUrl = new URL(`https://example.com/${errorPath}`);
       console.log(`recovery from navigation error: ${errorUrl}`);
       url.pathname = errorUrl.pathname;
@@ -51,7 +51,7 @@ const main = async (currentURL: string = location.href) => {
     return;
   }
 
-  // TODO: check cache (~1h)
+  // TODO: cache chosen account (email)
 
   const acc = await findAccount(projectID);
   if (!acc) {
