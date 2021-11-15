@@ -1,0 +1,18 @@
+{
+    "name": "Google Cloud Auto Account Switcher",
+    "description": "Build an Extension!",
+    "version": "0.20",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://console.cloud.google.com/*"
+            ],
+            "js": ["./src/content.ts"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "./src/inject.ts"
+    ]
+}
