@@ -4,7 +4,7 @@ import {
   listAccounts,
 } from "./lib/dashboard";
 
-const KEY_ALREADY_REDIRECTED = "__wgaaw_already";
+const KEY_ALREADY_REDIRECTED = "__wgaas_already";
 const KEY_PROJECTID = "project";
 
 const findAccount = async (projectID: string): Promise<Account | undefined> => {

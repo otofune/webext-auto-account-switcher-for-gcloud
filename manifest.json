@@ -1,7 +1,7 @@
 {
-    "name": "Google Cloud Auto Account Switcher",
-    "description": "Build an Extension!",
-    "version": "0.20",
+    "name": "Auto Account Switcher for Google Cloud Console",
+    "description": "Automatic switch to appropriate account based on authority of the project",
+    "version": "0.21",
     "manifest_version": 2,
     "content_scripts": [
         {

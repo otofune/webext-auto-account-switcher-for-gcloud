@@ -1,7 +1,12 @@
 {
+  "name": "webext-auto-account-switcher-for-gcloud",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "parcel build manifest.json",
-    "format": "prettier -w ./**/*.{ts,json,js}"
+    "format": "prettier -w ./**/*.{ts,json,js}",
+    "build:chrome": "# TODO",
+    "build:firefox": "# TODO"
   },
   "dependencies": {
     "zod": "^3.11.6"
