@@ -1,7 +1,7 @@
 {
     "name": "Auto Account Switcher for Google Cloud Console",
     "description": "Automatic switch to appropriate account based on authority of the project",
-    "version": "0.21",
+    "version": "0.25",
     "manifest_version": 2,
     "content_scripts": [
         {
@@ -12,6 +12,11 @@
             "run_at": "document_end"
         }
     ],
+    "icons": {
+        "16": "./assets/target-audience_16.png",
+        "48": "./assets/target-audience_48.png",
+        "128": "./assets/target-audience.png"
+    },
     "web_accessible_resources": [
         "./src/inject.ts"
     ]
