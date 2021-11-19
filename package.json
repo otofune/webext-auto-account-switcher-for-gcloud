@@ -3,10 +3,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "parcel build manifest.json",
+    "build": "rm -rf ./dist && parcel build manifest.json",
     "format": "prettier -w ./**/*.{ts,json,js}",
-    "build:chrome": "# TODO",
-    "build:firefox": "# TODO"
+    "release": "yarn -s build && yarn -s release:pack",
+    "release:pack": "rm -f dist.zip && cd dist && zip -r ../dist.zip ."
   },
   "dependencies": {
     "zod": "^3.11.6"

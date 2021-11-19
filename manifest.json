@@ -1,5 +1,5 @@
 {
-    "name": "Auto Account Switcher for Google Cloud Console",
+    "name": "Auto Account Switcher for Google Cloud",
     "description": "Automatic switch to appropriate account based on authority of the project",
     "version": "0.25",
     "manifest_version": 2,
