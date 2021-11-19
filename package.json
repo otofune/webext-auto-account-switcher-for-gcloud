@@ -9,11 +9,13 @@
     "release:pack": "rm -f dist.zip && cd dist && zip -r ../dist.zip ."
   },
   "dependencies": {
+    "webextension-polyfill": "^0.8.0",
     "zod": "^3.11.6"
   },
   "devDependencies": {
     "@parcel/config-webextension": "^2.0.1",
     "@types/jest": "^27.0.2",
+    "@types/webextension-polyfill": "^0.8.1",
     "jest": "^27.3.1",
     "parcel": "^2.0.1",
     "prettier": "^2.4.1",
